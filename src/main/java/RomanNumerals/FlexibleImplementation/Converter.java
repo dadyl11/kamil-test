@@ -2,5 +2,5 @@ package RomanNumerals.FlexibleImplementation;
 
 public interface Converter {
 
-  String convert(int input);
+  String convert(int inputNumber);
 }

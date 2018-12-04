@@ -1,9 +1,8 @@
 package RomanNumerals.FlexibleImplementation;
 
-public class ConvertRomanNumberToArabic implements Converter {
+public class ConvertRomanNumberToArabic {
 
-  @Override
-  public String convert(int romanNumber) {
+  public int convert(String romanNumber) {
     StringBuilder result = new StringBuilder(romanNumber);
     result.append(String.valueOf(romanNumber)
         .replace("CM", "DCD")
@@ -18,10 +17,6 @@ public class ConvertRomanNumberToArabic implements Converter {
         .replace("VV", "X")
         .replace("IV", "IIII")
         .replace("V", "IIIII"));
-    return String.valueOf(result.length());
-  }
-
-  public int convertRomanNumberToIntiger(int romanNumber){
-    return Integer.parseInt(convert(romanNumber));
+    return result.length();
   }
 }
