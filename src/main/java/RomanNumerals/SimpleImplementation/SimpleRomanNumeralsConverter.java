@@ -6,25 +6,24 @@ import java.util.stream.Stream;
 
 public class SimpleRomanNumeralsConverter {
 
-  Map<Integer, String> units = new HashMap<>();
+  static Map<Integer, String> units = new HashMap<>();
 
-  Map<Integer, String> tens = new HashMap<>();
+  static Map<Integer, String> tens = new HashMap<>();
 
-  Map<Integer, String> hundreds = new HashMap<>();
+  static Map<Integer, String> hundreds = new HashMap<>();
 
-  Map<Integer, String> thousands = new HashMap<>();
+  static Map<Integer, String> thousands = new HashMap<>();
 
-
-  String convertIntToRoman(int number) {
+  public String convertIntToRoman(int number) {
 
     if ((number <= 0) || (number > 4000)) {
-      throw new IllegalArgumentException(number + " is not in range (0,4000]");
+      throw new IllegalArgumentException(number + " is not in range (0,3999]");
     }
 
-    feedTensMap();
+    feedTensMap(tens);
     feedUnitsMap(units);
-    feedHundredsMap();
-    feedThousandsMap();
+    feedHundredsMap(hundreds);
+    feedThousandsMap(thousands);
 
     StringBuilder result = new StringBuilder("");
 
@@ -65,55 +64,30 @@ public class SimpleRomanNumeralsConverter {
     return result;
   }
 
-
-  private Map<Integer, String> feedTensMap() {
-    tens.put(0, "");
-    tens.put(1, "X");
-    tens.put(2, "XX");
-    tens.put(3, "XXX");
-    tens.put(4, "XL");
-    tens.put(5, "L");
-    tens.put(6, "LX");
-    tens.put(7, "LXX");
-    tens.put(8, "LXXX");
-    tens.put(9, "XC");
-    return tens;
-  }
-
-
-  private Map<Integer, String> feedHundredsMap() {
-    hundreds.put(0, "");
-    hundreds.put(1, "C");
-    hundreds.put(2, "CC");
-    hundreds.put(3, "CCC");
-    hundreds.put(4, "CD");
-    hundreds.put(5, "D");
-    hundreds.put(6, "DC");
-    hundreds.put(7, "DCC");
-    hundreds.put(8, "DCCC");
-    hundreds.put(9, "CM");
-    return hundreds;
-  }
-
   private void feedUnitsMap(Map<Integer, String> units) {
-    units.put(0, "");
     units.put(1, "I");
-    units.put(2, "II");
-    units.put(3, "III");
     units.put(4, "IV");
     units.put(5, "V");
-    units.put(6, "VI");
-    units.put(7, "VII");
-    units.put(8, "VIII");
     units.put(9, "IX");
-    //return units;
   }
 
-  private Map<Integer, String> feedThousandsMap() {
+  private void feedTensMap(Map<Integer, String> tens) {
+    tens.put(1, "X");
+    tens.put(4, "XL");
+    tens.put(5, "L");
+    tens.put(9, "XC");
+  }
+
+
+  private void feedHundredsMap(Map<Integer, String> hundreds) {
+    hundreds.put(1, "C");
+    hundreds.put(4, "CD");
+    hundreds.put(5, "D");
+    hundreds.put(9, "CM");
+  }
+
+  private void feedThousandsMap(Map<Integer, String> thousands) {
     thousands.put(1, "M");
-    thousands.put(2, "MM");
-    thousands.put(3, "MMM");
-    return thousands;
   }
 
   private Map<Integer, Map> createMapOfMaps() {

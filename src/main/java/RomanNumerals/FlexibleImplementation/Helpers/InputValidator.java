@@ -1,4 +1,4 @@
-package RomanNumerals.FlexibleImplementation;
+package RomanNumerals.FlexibleImplementation.Helpers;
 
 public class InputValidator {
 
