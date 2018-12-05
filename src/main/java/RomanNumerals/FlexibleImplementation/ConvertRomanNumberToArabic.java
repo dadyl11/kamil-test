@@ -3,8 +3,7 @@ package RomanNumerals.FlexibleImplementation;
 public class ConvertRomanNumberToArabic {
 
   public int convert(String romanNumber) {
-    StringBuilder result = new StringBuilder(romanNumber);
-    result.append(String.valueOf(romanNumber)
+    return romanNumber
         .replace("CM", "DCD")
         .replace("M", "DD")
         .replace("CD", "CCCC")
@@ -14,9 +13,8 @@ public class ConvertRomanNumberToArabic {
         .replace("XL", "XXXX")
         .replace("L", "XXXXX")
         .replace("IX", "VIV")
-        .replace("VV", "X")
+        .replace("X", "VV")
         .replace("IV", "IIII")
-        .replace("V", "IIIII"));
-    return result.length();
+        .replace("V", "IIIII").length();
   }
 }

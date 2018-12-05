@@ -65,6 +65,7 @@ public class SimpleRomanNumeralsConverter {
   }
 
   private void feedUnitsMap(Map<Integer, String> units) {
+    units.put(0, "");
     units.put(1, "I");
     units.put(4, "IV");
     units.put(5, "V");
@@ -72,6 +73,7 @@ public class SimpleRomanNumeralsConverter {
   }
 
   private void feedTensMap(Map<Integer, String> tens) {
+    tens.put(0, "");
     tens.put(1, "X");
     tens.put(4, "XL");
     tens.put(5, "L");
@@ -80,6 +82,7 @@ public class SimpleRomanNumeralsConverter {
 
 
   private void feedHundredsMap(Map<Integer, String> hundreds) {
+    hundreds.put(0, "");
     hundreds.put(1, "C");
     hundreds.put(4, "CD");
     hundreds.put(5, "D");

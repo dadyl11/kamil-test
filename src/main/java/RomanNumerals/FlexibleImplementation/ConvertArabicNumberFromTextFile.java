@@ -1,17 +1,18 @@
 package RomanNumerals.FlexibleImplementation;
 
 import RomanNumerals.FlexibleImplementation.Helpers.FileProcessor;
+import RomanNumerals.FlexibleImplementation.Helpers.InputValidator;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ConvertArabicNumberFromTextFile implements Converter {
 
+  private InputValidator inputValidator = new InputValidator();
   private FileProcessor fileProcessor = new FileProcessor();
   private static final String REGEX_ACCEPT_DIGITS_AND_SPACES_ONLY = "[\\d\\s]+";
 
   public String convertRomaNumbersAndWriteToTextFile(String fileName, String resultFileName) {
-
     try {
       List<String> linesFromFile = fileProcessor.readLinesFromFile(fileName);
       List<String> resultLines = new ArrayList<>();
@@ -25,12 +26,14 @@ public class ConvertArabicNumberFromTextFile implements Converter {
       e.printStackTrace();
       return "Process failed with the message " + e.getMessage();
     }
-
     return "Process succeed";
   }
 
   @Override
   public String convert(int arabicNumber) {
+
+    inputValidator.validateNumber(arabicNumber);
+
     StringBuilder result = new StringBuilder();
     result.append(String.valueOf(new char[arabicNumber]).replace('\0', 'I')
         .replace("IIIII", "V")

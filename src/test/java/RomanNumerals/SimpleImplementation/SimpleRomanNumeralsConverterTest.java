@@ -24,7 +24,6 @@ public class SimpleRomanNumeralsConverterTest {
     //given
 
     //when
-
     String test = romanNumeralsConverter.convertIntToRoman(arabicNumber);
 
     //then
@@ -58,22 +57,19 @@ public class SimpleRomanNumeralsConverterTest {
         new Object[]{90, "XC"},
         new Object[]{100, "C"},
         new Object[]{209, "CCIX"},
-        new Object[]{1000, "M"},
-        new Object[]{2000, "MM"},
-        new Object[]{3000, "MMM"},
+        new Object[]{250, "CCL"},
         new Object[]{400, "CD"},
         new Object[]{500, "D"},
-        new Object[]{900, "CM"},
         new Object[]{843, "DCCCXLIII"},
-        new Object[]{1995, "MCMXCV"},
-        new Object[]{209, "CCIX"},
-        new Object[]{2562, "MMDLXII"},
-        new Object[]{3276, "MMMCCLXXVI"},
-        new Object[]{3000, "MMM"},
-        new Object[]{400, "CD"},
-        new Object[]{500, "D"},
         new Object[]{900, "CM"},
-        new Object[]{1, "I"}
+        new Object[]{999, "CMXCIX"},
+        new Object[]{1000, "M"},
+        new Object[]{1995, "MCMXCV"},
+        new Object[]{2000, "MM"},
+        new Object[]{2562, "MMDLXII"},
+        new Object[]{3000, "MMM"},
+        new Object[]{3276, "MMMCCLXXVI"},
+        new Object[]{3999, "MMMCMXCIX"}
     };
   }
 }
