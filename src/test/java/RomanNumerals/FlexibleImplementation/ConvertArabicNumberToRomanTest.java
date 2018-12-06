@@ -11,7 +11,6 @@ class ConvertArabicNumberToRomanTest {
 
   private ConvertArabicNumberToRoman romanNumeralsConverter = new ConvertArabicNumberToRoman();
 
-
   @ParameterizedTest
   @ArgumentsSource(ArabicToRoman.class)
   void shouldConvertRomanNumberToArabic(int arabicNumber, String romanNumber) {
