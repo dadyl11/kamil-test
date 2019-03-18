@@ -1,4 +1,4 @@
-package RomanNumerals.SimpleImplementation;
+package romanNumerals.simpleImplementation;
 
 import java.util.HashMap;
 import java.util.Map;

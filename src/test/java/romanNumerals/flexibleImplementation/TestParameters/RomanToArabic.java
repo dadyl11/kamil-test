@@ -1,4 +1,4 @@
-package RomanNumerals.FlexibleImplementation.TestParameters;
+package romanNumerals.flexibleImplementation.TestParameters;
 
 import java.util.stream.Stream;
 import org.junit.jupiter.api.extension.ExtensionContext;

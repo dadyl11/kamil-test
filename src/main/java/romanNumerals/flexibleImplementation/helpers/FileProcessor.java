@@ -1,4 +1,4 @@
-package RomanNumerals.FlexibleImplementation.Helpers;
+package romanNumerals.flexibleImplementation.helpers;
 
 import java.io.File;
 import java.io.FileWriter;
